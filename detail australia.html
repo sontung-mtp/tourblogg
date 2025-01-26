@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hành Trình Du Lịch Úc 6 Ngày</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #01579b;
+        }
+        .navbar {
+            background-color: #0277bd;
+            width: 100%;
+            text-align: center; /* Căn giữa thanh điều hướng */
+        }
+        .navbar a {
+            padding: 14px 20px;
+            display: inline-block; /* Đảm bảo các mục nằm trên cùng 1 dòng */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #81d4fa;
+            color: #01579b;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 20px 20px;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .image-gallery img {
+            width: 45%;
+            border-radius: 10px;
+        }
+        
+        /* Media Query for Mobile Devices */
+         /* CSS chỉnh sửa cho phần Đặt Tour */
+    .booking {
+        background-color: #ffeb3b; /* Màu vàng nhạt */
+        text-align: center;
+        padding: 20px; /* Khoảng cách bên trong ô */
+        margin-top: 20px; /* Khoảng cách phía trên */
+        border-radius: 10px; /* Bo tròn góc ô */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng */
+    }
+
+    .btn-book {
+        display: inline-block;
+        background-color: #0277bd; /* Màu xanh đậm */
+        color: white;
+        text-decoration: none; /* Bỏ gạch chân */
+        font-size: 1.5em; /* Kích thước chữ */
+        font-weight: bold; /* Chữ đậm */
+        padding: 15px 30px; /* Tăng khoảng cách bên trong nút */
+        border-radius: 5px; /* Bo tròn nút */
+        transition: background-color 0.3s ease; /* Hiệu ứng hover */
+    }
+
+    .btn-book:hover {
+        background-color: #01579b; /* Màu xanh đậm hơn khi hover */
+    }@media (max-width: 768px) {
+            .navbar {
+                text-align: center; /* Đảm bảo thanh điều hướng căn giữa trên màn hình nhỏ */
+            }
+            .image-gallery img {
+                width: 90%; /* Tối ưu hình ảnh cho màn hình nhỏ */
+            }
+            .container {
+                padding: 20px; /* Giảm padding cho container */
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth; /* Tạo hiệu ứng cuộn mượt mà */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#ngay1">Ngày 1</a>
+        <a href="#ngay2">Ngày 2</a>
+        <a href="#ngay3">Ngày 3</a>
+        <a href="#ngay4">Ngày 4</a>
+        <a href="#ngay5">Ngày 5</a>
+        <a href="#ngay6">Ngày 6</a>
+        <a href="#monan">Món Ăn</a> <!-- Mục đồ ăn mới -->
+    </div>
+    <div class="container">
+        <h1>Hành Trình Du Lịch Úc 6 Ngày</h1>
+        <h2 id="ngay1">Ngày 1: Khám Phá Sydney Opera House</h2>
+        <p>Sydney Opera House là một trong những công trình kiến trúc nổi tiếng nhất thế giới, với hình dáng độc đáo giống như những cánh buồm vươn lên. Đây là một điểm đến không thể bỏ qua khi du lịch Úc.</p>
+        <div class="image-gallery">
+            <img src="https://cdn.pixabay.com/photo/2014/05/26/09/58/sydney-opera-house-354375_1280.jpg" alt="Sydney Opera House">
+            <img src="https://cdn.pixabay.com/photo/2016/09/17/17/41/sydney-1676597_1280.jpg" alt="Sydney Opera House and Harbour Bridge">
+        </div>
+        <h2 id="ngay2">Ngày 2: Great Barrier Reef</h2>
+        <p>Great Barrier Reef là rặng san hô lớn nhất thế giới, nơi du khách có thể tham gia các hoạt động lặn biển, ngắm san hô, và khám phá hệ sinh thái dưới nước độc đáo.</p>
+        <div class="image-gallery">
+            <img src="https://cdn.pixabay.com/photo/2014/02/08/12/36/great-barrier-reef-261727_1280.jpg" alt="Great Barrier Reef">
+            <img src="https://cdn.pixabay.com/photo/2013/02/09/04/33/scuba-diving-79606_1280.jpg" alt="Diving at Great Barrier Reef">
+        </div>
+        <h2 id="ngay3">Ngày 3: Khám Phá Melbourne</h2>
+        <p>Melbourne nổi bật với nền văn hóa đa dạng, nghệ thuật đường phố và các quán cà phê độc đáo. Du khách có thể tham quan Federation Square, Melbourne Zoo, và nhiều khu vực khác.</p>
+        <div class="image-gallery">
+            <img src="https://cdn.pixabay.com/photo/2018/12/31/13/45/australia-3905135_1280.jpg" alt="Melbourne City">
+            <img src="https://cdn.pixabay.com/photo/2020/05/07/12/05/architecture-5141268_1280.jpg" alt="Federation Square Melbourne">
+        </div>
+        <h2 id="ngay4">Ngày 4: Khám Phá Uluru (Ayers Rock)</h2>
+        <p>Uluru, hay còn gọi là Ayers Rock, là một trong những địa danh nổi tiếng nhất của Úc. Đây là một khối đá đỏ khổng lồ, nằm trong công viên quốc gia Uluru-Kata Tjuta, nơi bạn có thể tham gia các chuyến đi bộ và khám phá văn hóa của người Aborigines.</p>
+        <div class="image-gallery">
+            <img src="https://cdn.pixabay.com/photo/2015/02/09/21/10/australia-630219_1280.jpg" alt="Uluru">
+            <img src="https://cdn.pixabay.com/photo/2018/07/12/13/33/australia-3533418_1280.jpg" alt="Uluru Sunrise">
+        </div>
+        <h2 id="ngay5">Ngày 5: Khám Phá Sydney</h2>
+        <p>Sydney là một trong những thành phố đẹp nhất thế giới, với các bãi biển tuyệt vời, chợ trời, và các điểm du lịch hấp dẫn như Darling Harbour, Bondi Beach, và nhiều công viên thú vị.</p>
+        <div class="image-gallery">
+            <img src="https://cdn.pixabay.com/photo/2014/03/03/12/33/darling-harbour-278904_1280.jpg" alt="Darling Harbour">
+            <img src="https://cdn.pixabay.com/photo/2022/11/02/05/56/beach-7564109_1280.jpg" alt="Bondi Beach">
+        </div>
+        <h2 id="ngay6">Ngày 6: Khám Phá Tasmania</h2>
+        <p>Tasmania nổi bật với vẻ đẹp thiên nhiên hoang sơ, với các vườn quốc gia tuyệt đẹp và nhiều hoạt động ngoài trời như đi bộ đường dài và ngắm động vật hoang dã.</p>
+        <div class="image-gallery">
+            <img src="https://cdn.pixabay.com/photo/2022/05/17/11/23/cradle-mountain-7202389_1280.jpg" alt="Cradle Mountain Tasmania">
+            <img src="https://cdn.pixabay.com/photo/2022/05/17/11/23/cradle-mountain-7202389_1280.jpg" alt="Tasmania from Mount Wellington">
+        </div>
+
+        <!-- Thêm phần Món Ăn -->
+        <h2 id="monan">Món Ăn Úc</h2>
+        <p>Úc không chỉ nổi tiếng với những cảnh đẹp mà còn với nền ẩm thực độc đáo. Dưới đây là một số món ăn bạn không thể bỏ qua khi đến Úc:</p>
+        <ul>
+            <li><strong>Meat Pie:</strong> Bánh thịt là món ăn phổ biến của người Úc, thường được làm từ thịt bò, thịt cừu hoặc thịt gà, ăn kèm với sốt và khoai tây nghiền.</li>
+            <li><strong>Vegemite:</strong> Một loại mứt đặc trưng, được làm từ men bia, thường được ăn kèm với bánh mì nướng và bơ.</li>
+            <li><strong>Pavlova:</strong> Một món tráng miệng làm từ meringue, thường được phủ trái cây tươi như dâu tây, kiwi và xoài.</li>
+            <li><strong>Lamington:</strong> Bánh ngọt phủ dừa, được làm từ bánh bông lan nhúng trong sô cô la và phủ dừa nạo.</li>
+            <li><strong>Fish and Chips:</strong> Món cá chiên giòn ăn kèm khoai tây chiên, món ăn nhanh phổ biến trong các bãi biển của Úc.</li>
+        </ul>
+        <div class="image-gallery">
+            <img src="https://cdn.pixabay.com/photo/2014/11/02/19/35/meat-pie-514416_1280.jpg" alt="Meat Pie">
+            <img src="https://cdn.pixabay.com/photo/2015/03/21/18/04/peanut-butter-684021_1280.jpg" alt="Vegemite on Toast">
+            <img src="https://cdn.pixabay.com/photo/2021/07/22/20/12/pavlova-6485994_1280.jpg" alt="Pavlova">
+            <img src="data:image/jpeg;base64,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" alt="Lamington">
+            <img src="https://cdn.pixabay.com/photo/2024/03/20/12/26/fish-and-chips-8645438_1280.jpg" alt="Fish and Chips">
+        </div>
+<div class="booking">
+    <a href="contact australia.html" class="btn-book">Đặt Tour Ngay</a>
+</div>
+
+    </div>
+</body>
+</html>

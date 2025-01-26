@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Hành Trình Đi Mỹ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
+            color: #333;
+        }
+        header {
+            background: url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+        .timeline {
+            max-width: 800px;
+            margin: 50px auto;
+            position: relative;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #ff6347;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .timeline-item.left {
+            left: 0;
+        }
+        .timeline-item.right {
+            left: 50%;
+        }
+        .timeline-item img {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ff6347;
+            top: 20px;
+            right: -10px;
+        }
+        .timeline-item.left::before {
+            left: -10px;
+            right: auto;
+        }
+        .timeline-item h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .timeline-item p {
+            margin: 10px 0 0;
+        }
+        .cost {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .cost h2 {
+            text-align: center;
+            color: #ff6347;
+        }
+        .cost p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .booking {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffeb3b;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .booking h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .booking a {
+            display: block;
+            padding: 15px;
+            font-size: 1.2rem;
+            background-color: #ffeb3b;
+            color: #333;
+            text-decoration: none;
+            border: 2px solid #ff6347;
+            border-radius: 5px;
+            width: 200px;
+            margin: 0 auto;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .booking a:hover {
+            background-color: #ffd700;
+            border-color: #e5533c;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hành Trình Đến Mỹ</h1>
+        <p>Cùng khám phá những điểm đến nổi bật và trải nghiệm đáng nhớ.</p>
+    </header>
+
+    <section class="timeline">
+        <div class="timeline-item left">
+            <h3>Ngày 1: Khởi Hành</h3>
+            <p>Xuất phát từ sân bay quốc tế Tân Sơn Nhất, hành trình đầy kỳ vọng bắt đầu!</p>
+            <img src="https://cdn.pixabay.com/photo/2022/04/06/20/29/airplane-7116299_1280.jpg" alt="Máy bay chuẩn bị cất cánh">
+        </div>
+        <div class="timeline-item right">
+            <h3>Ngày 2: New York</h3>
+            <p>Tham quan Tượng Nữ Thần Tự Do và Quảng trường Thời Đại.</p>
+            <img src="https://cdn.pixabay.com/photo/2015/12/03/21/59/statue-of-liberty-1075752_1280.jpg" alt="Tượng Nữ Thần Tự Do">
+        </div>
+        <div class="timeline-item left">
+            <h3>Ngày 3: Washington D.C.</h3>
+            <p>Ghé thăm Nhà Trắng, Đài Tưởng Niệm Lincoln và Bảo tàng Smithsonian.</p>
+            <img src="https://cdn.pixabay.com/photo/2016/08/26/20/01/the-white-house-1623005_1280.jpg" alt="Nhà Trắng">
+        </div>
+        <div class="timeline-item right">
+            <h3>Ngày 4: Los Angeles</h3>
+            <p>Khám phá Hollywood và đi dạo trên Đại Lộ Danh Vọng.</p>
+            <img src="https://cdn.pixabay.com/photo/2018/10/30/06/32/hollywood-3782913_1280.jpg" alt="Hollywood">
+        </div>
+        <div class="timeline-item left">
+            <h3>Ngày 5: Kết Thúc Hành Trình</h3>
+            <p>Thư giãn và chuẩn bị quay trở về Việt Nam với những kỷ niệm đáng nhớ.</p>
+            <img src="https://cdn.pixabay.com/photo/2015/09/05/20/25/airport-925093_1280.jpg" alt="Hành khách chuẩn bị quay về">
+        </div>
+    </section>
+
+    <section class="cost">
+        <h2>Chi Phí Hành Trình</h2>
+        <p><strong>Giá vé máy bay:</strong> 25,000,000 VND/người (khứ hồi).</p>
+        <p><strong>Tiền đi tour:</strong> 50,000,000 VND/người (bao gồm ăn uống, khách sạn, và tham quan).</p>
+        <p>Tổng cộng: <strong>75,000,000 VND/người</strong>.</p>
+    </section>
+
+    <section class="booking">
+        <h2>Đặt Tour Ngay</h2>
+        <p>Đừng bỏ lỡ cơ hội khám phá nước Mỹ tuyệt vời! Hãy nhấn nút dưới đây để bắt đầu đặt tour ngay:</p>
+        <a href="contact usa.html">Đặt Tour</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Hành Trình Mỹ </p>
+    </footer>
+</body>
+</html>

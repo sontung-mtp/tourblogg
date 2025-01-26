@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Hành Trình Tour Pháp</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .header {
+            background: url('france_banner.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+        .header h1 {
+            font-size: 3.5em;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 2s;
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .header h1 {
+            position: relative;
+            z-index: 2;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        .timeline-item img {
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-content {
+            max-width: 600px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-content h3 {
+            color: #34495e;
+            font-size: 1.5em;
+        }
+        .timeline-content p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .cta {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta .price {
+            font-size: 1.8em;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .cta .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 15px 30px;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta .btn:hover {
+            background-color: #f39c12;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Khám Phá Vẻ Đẹp Của Pháp</h1>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h2>Chi Tiết Hành Trình (5 Ngày)</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <img src="https://cdn.pixabay.com/photo/2019/07/21/16/29/paris-4353082_1280.jpg" alt="Tháp Eiffel">
+                    <div class="timeline-content">
+                        <h3>Ngày 1: Paris - Tháp Eiffel và Dòng Sông Seine</h3>
+                        <p>Bắt đầu chuyến đi bằng việc tham quan biểu tượng của Paris - tháp Eiffel, và tận hưởng buổi tối lãng mạn dọc dòng sông Seine.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <img src="https://cdn.pixabay.com/photo/2020/11/22/19/19/louvre-5767708_1280.jpg" alt="Bảo tàng Louvre">
+                    <div class="timeline-content">
+                        <h3>Ngày 2: Bảo Tàng Louvre và Nhà Thờ Đức Bà</h3>
+                        <p>Khám phá kho tàng nghệ thuật thế giới tại Bảo tàng Louvre và tìm hiểu lịch sử tại Nhà thờ Đức Bà Paris.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <img src="https://cdn.pixabay.com/photo/2022/06/18/12/40/muenster-7269726_1280.jpg" alt="Lâu Đài Versailles">
+                    <div class="timeline-content">
+                        <h3>Ngày 3: Lâu Đài Versailles</h3>
+                        <p>Chiêm ngưỡng kiến trúc hoàng gia và khu vườn rộng lớn của Lâu đài Versailles.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/11/09/53/loire-1971306_1280.jpg" alt="Thung Lũng Loire">
+                    <div class="timeline-content">
+                        <h3>Ngày 4: Thung Lũng Loire</h3>
+                        <p>Tham quan những lâu đài nổi tiếng và thưởng thức các loại rượu vang địa phương tại thung lũng Loire.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/12/26/09/15/happy-holidays-3040029_1280.jpg" alt="Mua sắm tại Paris">
+                    <div class="timeline-content">
+                        <h3>Ngày 5: Mua Sắm và Trở Về</h3>
+                        <p>Dành thời gian mua sắm tại các cửa hàng thời trang nổi tiếng trước khi kết thúc hành trình.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cta">
+            <p class="price">Giá Tour: 59.000.000 VND</p>
+            <a href="contact france.html" class="btn">Đặt Tour Ngay</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Du Lịch Pháp. Mọi Quyền Được Bảo Lưu.</p>
+    </footer>
+</body>
+</html>

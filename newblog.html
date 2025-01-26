@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MTP TRAVEL - Du Lịch Cao Cấp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS cơ bản */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .banner {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .banner-slides {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            animation: slide 12s infinite;
+        }
+
+        .banner-slide {
+            min-width: 100%;
+            height: 100%;
+            transition: opacity 1s;
+        }
+
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            100% { transform: translateX(-400%); }
+        }
+
+        .banner .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .banner p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e6b800;
+        }
+
+        /* Tour Highlights */
+        .tour-section {
+            padding: 50px 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .tour-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .tour-section h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #ffcc00;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .tour-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .tour-item {
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tour-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .tour-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .tour-item h3 {
+            font-size: 22px;
+            margin: 15px;
+        }
+
+        .tour-item p {
+            padding: 0 15px 15px;
+            color: #555;
+        }
+
+        .cta {
+            margin-top: 10px;
+        }
+.contact, .reviews, .map {
+            padding: 60px 20px;
+            background-color: #fff;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .contact h2, .reviews h3, .map h3 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .contact form {
+            margin: 0 auto;
+            max-width: 600px;
+            background-color: #f4f4f4;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact form label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact form button {
+            background-color: #ff7f50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact form button:hover {
+            background-color: #e66a3e;
+            transform: scale(1.05);
+        }
+
+        .reviews-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            gap: 30px;
+            transition: transform 1s ease;
+        }
+
+        .review-item {
+            width: 270px;
+            height: 150px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            opacity: 1;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .review-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .review-item h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .review-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .review-item .rating {
+            margin-top: 10px;
+        }
+
+        .review-item.active {
+            transform: scale(1.1); /* Phóng to review */
+            transition: transform 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Hình ảnh mạng xã hội */
+        footer nav ul li a {
+            text-align: center;
+        }
+
+        footer nav ul li a img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        footer nav ul li a img:hover {
+            transform: scale(1.2);
+        }
+
+        footer nav ul li a span {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        /* CSS kết thúc */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="intro.html" class="logo">Skytourist</a>
+            <ul>
+                <li><a href="#home">Trang Chủ</a></li>
+                <li><a href="#tours">Tour</a></li>
+               
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner" id="home">
+        <div class="banner-slides">
+            <div class="banner-slide">
+                <img src="https://cdn.pixabay.com/photo/2023/05/22/13/45/mount-fuji-8010752_1280.jpg" alt="Mount Fuji">
+            </div>
+            <div class="banner-slide">
+                <img src="https://cdn.pixabay.com/photo/2019/10/06/08/57/tiber-river-4529605_1280.jpg" alt="Rome">
+            </div>
+            <div class="banner-slide">
+                <img src="https://cdn.pixabay.com/photo/2022/08/05/05/59/korea-7366036_1280.jpg" alt="Korea">
+            </div>
+            <div class="banner-slide">
+                <img src="https://cdn.pixabay.com/photo/2016/11/19/14/38/camel-1839616_1280.jpg" alt="Egypt">
+            </div>
+        </div>
+        <div class="overlay">
+            <div>
+                <h1>Khám Phá Thế Giới</h1>
+                <p>Cùng chúng tôi trải nghiệm những hành trình tuyệt vời nhất</p>
+                <a href="#tours" class="btn">Xem Tour</a>
+            </div>
+        </div>
+    </section>
+
+   <section class="tour-section" id="tours">
+    <h2>Gói Tour Hấp Dẫn</h2>
+    <div class="tour-list">
+        <!-- Tour Hàn Quốc -->
+        <div class="tour-item">
+            <a href="newnew.html">
+                <img src="https://cdn.pixabay.com/photo/2022/08/05/06/00/korea-7366042_1280.jpg" alt="Tour Hàn Quốc">
+            </a>
+            <h3>Hàn Quốc</h3>
+            <p>Trải nghiệm văn hóa độc đáo và hiện đại tại Seoul.</p>
+            <a href="newnew.html" class="btn cta">Xem Chi Tiết</a>
+        </div>
+
+        <!-- Tour Ý -->
+        <div class="tour-item">
+            <a href="detail Italia.html">
+                <img src="https://cdn.pixabay.com/photo/2014/08/20/22/27/colosseum-422942_1280.jpg" alt="Tour Ý">
+            </a>
+            <h3>Italy</h3>
+            <p>Thưởng thức nền văn hóa, ẩm thực và kiến trúc cổ kính.</p>
+            <a href="detail Italia.html" class="btn cta">Xem Chi Tiết</a>
+        </div>
+
+        <!-- Tour Nhật Bản -->
+        <div class="tour-item">
+            <a href="detail japan.html">
+                <img src="https://cdn.pixabay.com/photo/2023/01/08/08/40/road-7704729_1280.jpg" alt="Tour Nhật Bản">
+            </a>
+            <h3>Nhật Bản</h3>
+            <p>Khám phá vẻ đẹp cổ điển và hiện đại của Tokyo và Kyoto.</p>
+            <a href="detail japan.html" class="btn cta">Xem Chi Tiết</a>
+        </div>
+
+        <!-- Tour Pháp -->
+        <div class="tour-item">
+            <a href="detail france.html">
+                <img src="https://cdn.pixabay.com/photo/2020/01/10/19/21/mont-saint-michel-4756046_1280.jpg" alt="Tour Pháp">
+            </a>
+            <h3>Pháp</h3>
+            <p>Thưởng thức nghệ thuật, ẩm thực và những cảnh đẹp huyền thoại của Paris.</p>
+            <a href="detail france.html" class="btn cta">Xem Chi Tiết</a>
+        </div>
+
+        <!-- Tour Mỹ -->
+        <div class="tour-item">
+            <a href="detail usa.html">
+                <img src="https://cdn.pixabay.com/photo/2016/11/23/18/26/architecture-1854220_1280.jpg" alt="Tour Mỹ">
+            </a>
+            <h3>Hoa Kỳ</h3>
+            <p>Trải nghiệm thành phố sôi động New York và những công viên quốc gia tuyệt đẹp.</p>
+            <a href="detail usa.html" class="btn cta">Xem Chi Tiết</a>
+        </div>
+
+        <!-- Tour Anh -->
+        <div class="tour-item">
+            <a href="detail uk.html">
+                <img src="https://cdn.pixabay.com/photo/2019/08/09/21/51/london-4395915_1280.jpg" alt="Tour Anh">
+            </a>
+            <h3>Anh Quốc</h3>
+            <p>Tham quan London, Edinburgh và khám phá lịch sử và văn hóa Anh.</p>
+            <a href="detail uk.html" class="btn cta">Xem Chi Tiết</a>
+        </div>
+
+        <!-- Tour Thái Lan -->
+        <div class="tour-item">
+            <a href="detail thailand.html">
+                <img src="https://cdn.pixabay.com/photo/2016/11/14/03/29/grand-palace-1822487_1280.jpg" alt="Tour Thái Lan">
+            </a>
+            <h3>Thái Lan</h3>
+            <p>Khám phá văn hóa và thiên nhiên tuyệt đẹp của Bangkok và các đảo nhiệt đới.</p>
+            <a href="detail thailand.html" class="btn cta">Xem Chi Tiết</a>
+        </div>
+
+        <!-- Tour Singapore -->
+        <div class="tour-item">
+            <a href="detail singapore.html">
+                <img src="https://cdn.pixabay.com/photo/2017/08/30/11/12/singapore-2696704_1280.jpg" alt="Tour Singapore">
+            </a>
+            <h3>Singapore</h3>
+            <p>Trải nghiệm thành phố hiện đại với những khu vui chơi, công viên nổi tiếng.</p>
+            <a href="detail singapore.html" class="btn cta">Xem Chi Tiết</a>
+        </div>
+    </div>
+</section>
+
+    <section class="reviews" id="reviews">
+        <h3>Đánh Giá Khách Hàng</h3>
+        <div class="reviews-list">
+            <div class="review-item">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Edward">
+                <div>
+                    <h4>Edward</h4>
+                    <p>Chuyến đi thật tuyệt vời!Hướng dẫn viên rất nhiệt tình.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="kimcheese">
+                <div>
+                    <h4>kimcheese</h4>
+                    <p>Các dịch vụ tuyệt vời, tôi sẽ giới thiệu cho bạn bè.</p>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Shinichi">
+                <div>
+                    <h4>Shinichi </h4>
+                    <p>Chuyến đi rất đáng nhớ! Tôi đã có những trải nghiệm tuyệt vời.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Haibara Ai">
+                <div>
+                    <h4>Haibara Ai</h4>
+                    <p>Khung cảnh tuyệt đẹp, tôi sẽ quay lại trong tương lai gần!</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Minh meomeo">
+                <div>
+                    <h4>Minh meomeo</h4>
+                    <p>Dịch vụ xuất sắc, tôi rất hài lòng với chuyến đi.</p>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Ran chan">
+                <div>
+                    <h4>Ran chan</h4>
+                    <p>Hướng dẫn viên rất vui vẻ và nhiệt tình. Chắc chắn tôi sẽ quay lại.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section class="reviews" id="reviews">
+     
+
+    <section class="contact" id="contact">
+        <h2>Liên Hệ Chúng Tôi</h2>
+        <form>
+            <label for="name">Họ và tên</label>
+            <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required>
+            <label for="message">Lời nhắn</label>
+            <textarea id="message" name="message" placeholder="Nhập lời nhắn của bạn" rows="4" required></textarea>
+            <button type="submit">Gửi</button>
+        </form>
+<section class="company-info">
+    <h2>Thông Tin Công Ty</h2>
+    <p><strong>Văn phòng:</strong> 
+        <a href="https://www.google.com/maps/place/Vo+Truong+Toan+High+School/@10.8725844,106.6425727,17z/data=!4m15!1m8!3m7!1s0x317529e43f8608ad:0x473bb26fa50409c2!2zNDgyIMSQLiBOZ3V54buFbiBUaOG7iyDEkOG6t25nLCBIaeG7h3AgVGjDoG5oLCBRdeG6rW4gMTIsIEjhu5MgQ2jDrSBNaW5oIDcwMDAwMCwgVmlldG5hbQ!3b1!8m2!3d10.8726865!4d106.6451823!16s%2Fg%2F11c3q2s8fw!3m5!1s0x317529e43f8608ad:0x38f204df564f9f35!8m2!3d10.8726412!4d106.6447253!16s%2Fg%2F1tvm07ms?entry=ttu&g_ep=EgoyMDI1MDEyMS4wIKXMDSoASAFQAw%3D%3D" 
+           target="_blank" 
+           style="color: #0277bd; text-decoration: none;">
+            428 Đường Nguyễn Thị Đặng, Phường Hiệp Thành, Quận 12, TP. Hồ Chí Minh
+        </a>
+    </p>
+    <p><strong>Điện thoại:</strong> 0988 888 888</p>
+   <a href="contact australia.html" class="btn-book">Email:contackskytourist.com</a>
+</div>
+</section>
+
+    </section>
+
+   <footer>
+    <nav>
+        <ul style="display: flex; justify-content: center; list-style: none; padding: 0;">
+            <li style="margin: 0 10px;">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="https://cdn.pixabay.com/photo/2017/06/22/06/22/facebook-2429746_1280.png" alt="Facebook" style="width: 50px; height: 50px;">
+                </a>
+            </li>
+            <li style="margin: 0 10px;">
+                <a href="https://instagram.com" target="_blank">
+                    <img src="https://cdn.pixabay.com/photo/2016/08/09/17/52/instagram-1581266_1280.jpg" alt="Instagram" style="width: 50px; height: 50px;">
+                </a>
+            </li>
+            <li style="margin: 0 10px;">
+                <a href="https://youtube.com" target="_blank">
+                    <img src="https://cdn.pixabay.com/photo/2016/07/03/18/36/youtube-1495277_1280.png" alt="YouTube" style="width: 50px; height: 50px;">
+                </a>
+            </li>
+        </ul>
+    </nav>
+</footer>
+
+    <script>
+        let reviewIndex = 0;
+        const reviews = document.querySelectorAll('.review-item');
+        const totalReviews = reviews.length;
+
+        setInterval(() => {
+            reviews.forEach((review, index) => {
+                review.classList.remove('active');
+                if (index === reviewIndex) {
+                    review.classList.add('active');
+                }
+            });
+            reviewIndex = (reviewIndex + 1) % totalReviews;
+        }, 3000);  // Chuyển review mỗi 3 giây
+    </script>
+</body>
+
+</html>
